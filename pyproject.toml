@@ -1,12 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "wsb-stock-analyzer"
+name = "wsb-sentinel-agent"
 version = "0.1.0"
-description = "Add your description here"
+description = "A modern backend foundation for AI-agent development focused on Reddit WSB data ingestion"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "aiohttp>=3.12.14",
     "pydantic>=2.11.7",
-    "python-dotenv>=1.1.1",
-    "textblob>=0.19.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "black>=24.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.hatchling.build]
+packages = ["src/wsb_sentinel_agent"]
