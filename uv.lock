@@ -1117,7 +1117,7 @@ wheels = [
 ]
 
 [[package]]
-name = "wsb-sentinel-agent"
+name = "wsb-sentiment-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
