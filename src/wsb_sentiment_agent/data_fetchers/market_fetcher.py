@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 import yfinance as yf
 import pandas as pd
 
-from wsb_sentinel_agent.models.market import OhlcBar
+from wsb_sentiment_agent.models.market import OhlcBar
 
 logger = logging.getLogger(__name__)
 

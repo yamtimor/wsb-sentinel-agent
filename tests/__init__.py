@@ -1,2 +1,2 @@
-"""Tests for WSB Sentinel Agent."""
+"""Tests for WSB Sentiment Agent."""
 

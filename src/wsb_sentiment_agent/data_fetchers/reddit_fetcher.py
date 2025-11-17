@@ -4,8 +4,8 @@ import aiohttp
 import logging
 from typing import List, Optional
 
-from wsb_sentinel_agent.models.reddit import RedditPost, RedditComment
-from wsb_sentinel_agent.config.settings import Settings
+from wsb_sentiment_agent.models.reddit import RedditPost, RedditComment
+from wsb_sentiment_agent.config.settings import Settings
 
 logger = logging.getLogger(__name__)
 

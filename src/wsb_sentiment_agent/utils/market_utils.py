@@ -1,7 +1,7 @@
 """Utility functions for processing market data."""
 
 from typing import List
-from wsb_sentinel_agent.models.market import OhlcBar
+from wsb_sentiment_agent.models.market import OhlcBar
 
 
 def calculate_return(bars: List[OhlcBar]) -> float:

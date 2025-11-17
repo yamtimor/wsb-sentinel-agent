@@ -1,4 +1,4 @@
-# Minimal production Dockerfile for WSB Sentinel Agent
+# Minimal production Dockerfile for WSB Sentiment Agent
 FROM python:3.11-slim
 
 # Install uv

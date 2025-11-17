@@ -12,7 +12,7 @@ class Settings:
     REDDIT_SUBREDDIT: str = "wallstreetbets"
     REDDIT_POST_LIMIT: int = 50
     REDDIT_TIME_FILTER: str = "day"  # hour, day, week, month, year, all
-    REDDIT_USER_AGENT: str = "wsb-sentinel-agent/0.1.0 by wsb-sentinel-agent"
+    REDDIT_USER_AGENT: str = "wsb-sentiment-agent/0.1.0 by wsb-sentiment-agent"
 
     # Optional: Fetch comments for posts
     FETCH_COMMENTS: bool = os.getenv("FETCH_COMMENTS", "false").lower() == "true"

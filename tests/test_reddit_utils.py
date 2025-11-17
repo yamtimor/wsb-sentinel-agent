@@ -1,7 +1,7 @@
 """Tests for Reddit utility functions."""
 
 import pytest
-from wsb_sentinel_agent.utils.reddit_utils import extract_tickers_from_text
+from wsb_sentiment_agent.utils.reddit_utils import extract_tickers_from_text
 
 
 def test_extract_tickers_simple():
