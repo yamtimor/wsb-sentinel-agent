@@ -1,15 +1,15 @@
-"""Main entry point for WSB Sentinel Agent."""
+"""Main entry point for WSB Sentiment Agent."""
 
 import asyncio
 import logging
-from wsb_sentinel_agent.data_fetchers import (
+from wsb_sentiment_agent.data_fetchers import (
     fetch_reddit_posts,
     fetch_post_comments,
     fetch_spy_history,
     fetch_vix_history,
 )
-from wsb_sentinel_agent.config.settings import Settings
-from wsb_sentinel_agent.utils import extract_tickers_from_text, calculate_return, get_vix_trend
+from wsb_sentiment_agent.config.settings import Settings
+from wsb_sentiment_agent.utils import extract_tickers_from_text, calculate_return, get_vix_trend
 
 # Configure logging
 logging.basicConfig(
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 async def main():
     """Main function to demonstrate Reddit data fetching."""
-    logger.info("Starting WSB Sentinel Agent data fetch")
+    logger.info("Starting WSB Sentiment Agent data fetch")
     print("Fetching top Reddit posts from r/wallstreetbets...")
     posts = await fetch_reddit_posts()
     logger.info(f"Successfully fetched {len(posts)} posts from Reddit")

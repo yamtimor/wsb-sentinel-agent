@@ -1,10 +1,10 @@
-# WSB Sentinel Agent
+# WSB Sentiment Agent
 
-A backend foundation for an AI-driven "sentinel" that monitors WallStreetBets crowd behavior and market regime data (SPY & VIX). This project provides the data layer that will power future AI Agent analysis of WSB sentiment versus market volatility regimes.
+A backend foundation for an AI-driven agent that monitors WallStreetBets crowd behavior and market regime data (SPY & VIX). This project provides the data layer that will power future AI Agent analysis of WSB sentiment versus market volatility regimes.
 
 ## Overview
 
-**wsb-sentinel-agent** is a backend and data layer that fetches Reddit WallStreetBets activity and basic market data (SPY & VIX). In later phases, this will power an AI Agent that analyzes crowd sentiment versus market volatility regimes.
+**wsb-sentiment-agent** is a backend and data layer that fetches Reddit WallStreetBets activity and basic market data (SPY & VIX). In later phases, this will power an AI Agent that analyzes crowd sentiment versus market volatility regimes.
 
 ### Current Implementation
 
@@ -22,9 +22,9 @@ A backend foundation for an AI-driven "sentinel" that monitors WallStreetBets cr
 ## Project Structure
 
 ```
-wsb-sentinel-agent/
+wsb-sentiment-agent/
 ├── src/
-│   └── wsb_sentinel_agent/
+│   └── wsb_sentiment_agent/
 │       ├── __init__.py
 │       ├── main.py                 # Main entry point
 │       ├── config/                 # Configuration module
@@ -80,8 +80,8 @@ wsb-sentinel-agent/
 
 2. **Clone the repository**:
    ```bash
-   git clone https://github.com/yamtimor/wsb-sentinel-agent.git
-   cd wsb-sentinel-agent
+   git clone https://github.com/yamtimor/wsb-sentiment-agent.git
+   cd wsb-sentiment-agent
    ```
 
 3. **Install dependencies**:
@@ -102,7 +102,7 @@ uv run python main.py
 ### Fetching Reddit Posts
 
 ```python
-from wsb_sentinel_agent.data_fetchers import fetch_reddit_posts
+from wsb_sentiment_agent.data_fetchers import fetch_reddit_posts
 
 posts = await fetch_reddit_posts()
 for post in posts:
@@ -112,7 +112,7 @@ for post in posts:
 ### Fetching Comments
 
 ```python
-from wsb_sentinel_agent.data_fetchers import fetch_post_comments
+from wsb_sentiment_agent.data_fetchers import fetch_post_comments
 
 comments = await fetch_post_comments(post_id="abc123", limit=10)
 for comment in comments:
@@ -122,8 +122,8 @@ for comment in comments:
 ### Fetching Market Data
 
 ```python
-from wsb_sentinel_agent.data_fetchers import fetch_spy_history, fetch_vix_history
-from wsb_sentinel_agent.utils import calculate_return, get_vix_trend
+from wsb_sentiment_agent.data_fetchers import fetch_spy_history, fetch_vix_history
+from wsb_sentiment_agent.utils import calculate_return, get_vix_trend
 
 # Fetch SPY data
 spy_bars = await fetch_spy_history(days=30)
@@ -143,7 +143,7 @@ Configure behavior via environment variables:
 - `FETCH_COMMENTS`: Set to `"true"` to enable comment fetching (default: `false`)
 - `MAX_COMMENTS_PER_POST`: Maximum comments to fetch per post (default: `10`)
 
-Or modify `src/wsb_sentinel_agent/config/settings.py` directly.
+Or modify `src/wsb_sentiment_agent/config/settings.py` directly.
 
 ## Development
 
@@ -170,8 +170,8 @@ uv run ruff check src/ tests/
 Build and run with Docker:
 
 ```bash
-docker build -t wsb-sentinel-agent .
-docker run wsb-sentinel-agent
+docker build -t wsb-sentiment-agent .
+docker run wsb-sentiment-agent
 ```
 
 ## Architecture Decisions

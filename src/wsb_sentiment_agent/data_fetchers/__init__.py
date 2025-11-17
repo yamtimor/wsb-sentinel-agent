@@ -1,10 +1,10 @@
 """Data fetchers for external APIs."""
 
-from wsb_sentinel_agent.data_fetchers.reddit_fetcher import (
+from wsb_sentiment_agent.data_fetchers.reddit_fetcher import (
     fetch_reddit_posts,
     fetch_post_comments,
 )
-from wsb_sentinel_agent.data_fetchers.market_fetcher import (
+from wsb_sentiment_agent.data_fetchers.market_fetcher import (
     fetch_ohlc,
     fetch_spy_history,
     fetch_vix_history,

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "wsb-sentinel-agent"
+name = "wsb-sentiment-agent"
 version = "0.1.0"
 description = "A modern backend foundation for AI-agent development focused on Reddit WSB data ingestion"
 readme = "README.md"
@@ -24,7 +24,7 @@ dev = [
 ]
 
 [tool.hatchling.build]
-packages = ["src/wsb_sentinel_agent"]
+packages = ["src/wsb_sentiment_agent"]
 
 [dependency-groups]
 dev = [
