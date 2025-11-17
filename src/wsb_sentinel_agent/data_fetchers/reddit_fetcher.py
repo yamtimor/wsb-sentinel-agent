@@ -1,10 +1,13 @@
 """Reddit data fetcher for r/wallstreetbets."""
 
 import aiohttp
+import logging
 from typing import List, Optional
 
 from wsb_sentinel_agent.models.reddit import RedditPost, RedditComment
 from wsb_sentinel_agent.config.settings import Settings
+
+logger = logging.getLogger(__name__)
 
 
 async def fetch_reddit_posts() -> List[RedditPost]:
@@ -21,6 +24,9 @@ async def fetch_reddit_posts() -> List[RedditPost]:
         async with session.get(url) as response:
             if response.status != 200:
                 text = await response.text()
+                logger.error(
+                    f"Reddit API error fetching posts - Status {response.status}: {text[:200]}"
+                )
                 raise Exception(
                     f"Reddit API error - Status {response.status}: {text[:200]}"
                 )
@@ -77,6 +83,10 @@ async def fetch_post_comments(post_id: str, limit: Optional[int] = None) -> List
         async with session.get(url) as response:
             if response.status != 200:
                 text = await response.text()
+                logger.error(
+                    f"Reddit API error fetching comments for post {post_id} - "
+                    f"Status {response.status}: {text[:200]}"
+                )
                 raise Exception(
                     f"Reddit API error - Status {response.status}: {text[:200]}"
                 )
